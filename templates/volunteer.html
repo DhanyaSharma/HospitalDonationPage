@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volunteering</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <script src="{{ url_for('static', filename='first.js') }}"></script>
+</head>
+<body id="form">
+    <form action="/submit_volunteer_details" method="POST">
+
+        <h1>Volunteering for Hospital Events</h1>
+        <div style="float:right; margin-left: 20px;">
+            <img src="{{ url_for('static', filename='dash.webp') }}"  alt="Image description" width="250">
+        </div>
+        <div style="float:left; margin-right: 20px;">
+            <img src="{{ url_for('static', filename='dash.webp') }}"  alt="Image description" width="250">
+        </div>
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>Medical Camp - Date: April 15, 2024</li>
+            <li>Blood Donation Drive - Date: May 20, 2024</li>
+            <li>Health Awareness Seminar - Date: June 10, 2024</li>
+            <li>Polio Drop - Date: July 1, 2024</li>
+            <li>Health Awareness Campaign - Date: August 15, 2024</li>
+            <!-- Add more events here -->
+        </ul>
+        <div style="text-align: center;">
+        <h3>Register for an Event:</h3>
+        <form action="/submit_volunteer_details" method="post">
+        <label for="Aadhar_No">Aadhar No:</label>
+        <input type="text" id="Aadhar_No" name="Aadhar_No" required>
+        <br>
+        <label for="event">Select Event:</label>
+        <select name="event" id="event">
+            <option value="medical_camp">Medical Camp</option>
+            <option value="blood_drive">Blood Donation Drive</option>
+            <option value="awareness_seminar">Health Awareness Seminar</option>
+            <!-- Add more events here -->
+        </select>
+        <br>
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+        
+        <div style="text-align: center;">
+            <p class="alter"><a href="{{ url_for('index') }}">Home</a></p>
+        </div>
+    </form>
+</body>
+</html>

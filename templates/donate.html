@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/donation.css">
+    <script src="/static/first.js"></script>
+    
+</head>
+<header>
+    <h1>Organ Donation Registration</h1>
+</header>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 20px;
+    }
+    .form-container {
+        max-width: 400px; /* Adjust the maximum width as needed */
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+    .form-container header {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .form-container h1 {
+        margin: 0;
+        color: #007bff;
+    }
+    .form-container label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+    }
+    .form-container input,
+    .form-container select {
+        width: calc(100% - 10px);
+        margin-bottom: 10px;
+        padding: 8px;
+        font-size: medium;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .form-container input[type="submit"] {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    .form-container input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    .form-container a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .form-container a:hover {
+        text-decoration: underline;
+    }
+</style>
+</head>
+<html>
+<body>
+    <form action="/donate" method="post">
+        <label for="first_name">First Name*:</label>
+        <input type="text" id="first_name" name="first_name" required><br>
+
+        <label for="middle_name">Middle Name:</label>
+        <input type="text" id="middle_name" name="middle_name"><br>
+
+        <label for="last_name">Last Name*:</label>
+        <input type="text" id="last_name" name="last_name" required><br>
+
+        <label for="mother_father_name">Mother's/Father's Name*:</label>
+        <input type="text" id="mother_father_name" name="mother_father_name" required><br>
+
+        <label for="current_address">Current Residential Address*:</label>
+        <input type="text" id="current_address" name="current_address" required><br>
+
+        <label for="address_line_2">Address Line 2*:</label>
+        <input type="text" id="address_line_2" name="address_line_2" required><br>
+
+        <label for="city">City*:</label>
+        <input type="text" id="city" name="city" required><br>
+
+        <label for="district">District*:</label>
+        <input type="text" id="district" name="district" required><br>
+
+        <label for="state">State*:</label>
+        <input type="text" id="state" name="state" required><br>
+
+        <label for="pin_code">PIN Code*:</label>
+        <input type="text" id="pin_code" name="pin_code" required><br>
+
+        <label for="mobile_number">Mobile Number*:</label>
+        <input type="tel" id="mobile_number" name="mobile_number" required><br>
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation"><br>
+
+        <label for="email">Email*:</label>
+        <input type="email" id="email" name="email" required><br>
+
+        <label for="dob">Date Of Birth(DD/MM/YYYY)*:</label>
+        <input type="text" id="dob" name="dob" required><br>
+
+        <label for="age">Age*:</label>
+        <input type="number" id="age" name="age" required><br>
+
+        <label for="gender">Gender*:</label>
+        <select id="gender" name="gender" required>
+            <option value="" disabled selected>---Select---</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <label for="blood_group">Blood Group*:</label>
+        <select id="blood_group" name="blood_group" required>
+            <option value="" disabled selected>---Select---</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select><br>
+
+        <label for="emergency_contact_name">Emergency Contact Name *:</label>
+        <input type="text" id="emergency_contact_name" name="emergency_contact_name" required><br>
+
+        <label for="emergency_contact_address">Emergency Contact Address*:</label>
+        <input type="text" id="emergency_contact_address" name="emergency_contact_address" required><br>
+
+        <label for="identity_card">Choose Identity Card*:</label>
+        <select id="identity_card" name="identity_card" required>
+            <option value="" disabled selected>-------Select One-------</option>
+            <option value="aadhar">Aadhar</option>
+            <option value="voter_id">Voter ID</option>
+            <option value="passport">Passport</option>
+            <!-- Add more options as needed -->
+        </select><br>
+
+        <label for="identity_card_number">Enter Identity Card Number*:</label>
+        <input type="text" id="identity_card_number" name="identity_card_number" required><br>
+
+        <label for="organs_to_donate">Organs that I wish to donate*:</label><br>
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="all_organs">All Organs
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="corneas">Corneas (Eyes)
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="kidneys">Kidneys
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="heart">Heart
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="lungs">Lungs
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="liver">Liver
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="pancreas">Pancreas
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="small_intestine">Small Intestine
+        <input type="checkbox" id="organs_to_donate" name="organs_to_donate[]" value="skin">Skin<br>
+
+        <input type="checkbox" id="declaration" name="declaration" required>
+        <label for="declaration">I declare that I am a citizen of India and above 18 years of age.</label><br>
+
+        <input type="checkbox" id="privacy_policy" name="privacy_policy" required>
+        <label for="privacy_policy">I agree to the privacy policy <a href="privacy_policy.html">Read More</a></label><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</html>

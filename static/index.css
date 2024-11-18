@@ -1,0 +1,87 @@
+h1{
+    color:rgb(146, 0, 165); text-align: center; font-weight:900; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+h2{
+    color: rgb(146, 0, 165);text-align: center; font-weight: 400;
+}
+h3{
+    color: rgb(146, 0, 165); font-weight: 300;
+}
+header{
+    height: 100px;
+}
+body {
+    background-image: url('bgb.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer {
+    text-align: center;
+    color: black;
+    height: 20px;
+    margin-top: 30px; /* Adjust as needed */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #4d025c;
+}
+
+th, td {
+    border: 1px solid#4d025c;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+main {
+    text-align: center;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    margin-top: 15px;
+    padding: 10px 70px 10px 70px;
+}
+
+.image-wrapper {
+    flex: 1;
+    margin-right:5px; /* Adjust spacing between images */
+}
+
+/* Remove margin-right from the last image */
+.image-wrapper:last-child {
+    margin-right: 0;
+}
+.caption {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 26px;
+    color:  #4d025c; /* Adjust color as needed */
+}
+#navbar {
+    display: flex;
+    height: 60px;
+    color: #4d025c;
+    justify-content: flex;
+    margin: 35px;
+    padding: 0px 0px 200px 0px;
+}
+
+#navbar h3 {
+    display: flex;
+    gap: 15px; /* Adjust the gap between links */
+}
+
+#navbar h3 a {
+    text-decoration: none; /* Remove underline */
+}
+#form{
+    align-items: center;
+
+}

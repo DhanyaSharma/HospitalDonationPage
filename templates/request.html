@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/request.css">
+    <script src="/static/first.js"></script>
+    
+</head>
+<body>
+    <header>
+        <h1>Organ Request Form</h1>
+    </header>
+    <main>
+        <form action="/submit_organ_request" method="post">
+            <label for="patient_name">Patient's Name*:</label>
+            <input type="text" id="patient_name" name="patient_name" required><br>
+
+            <label for="Aadhar_No">Aadhar No*</label>
+            <input type="text" id="Aadhar_No" name="Aadhar_No" required>
+
+            <label for="patient_age">Patient's Age:</label>
+            <input type="number" id="patient_age" name="patient_age" required><br>
+
+            <label for="Relationship">Patient's Relationship*:</label>
+            <input type="text" id="Relationship" name="Relationship" required><br>
+
+            <label for="required_organs">Required Organs*:</label>
+            <input type="text" id="required_organs" name="required_organs" required><br>
+
+            <label for="urgency_level">Urgency Level*:</label>
+            <select id="urgency_level" name="urgency_level" required>
+                <option value="" disabled selected>---Select---</option>
+                <option value="Within 3 weeks">Within 3 weeks</option>
+                <option value="3 months">3 months</option>
+                <option value="6 months">6 months</option>
+            </select><br>
+
+            <label for="contact_name">Contact Name*:</label>
+            <input type="text" id="contact_name" name="contact_name" required><br>
+
+            <label for="contact_number">Contact Number*:</label>
+            <input type="tel" id="contact_number" name="contact_number" required><br>
+
+            <label for="additional_info">Additional Information:</label>
+            <textarea id="additional_info" name="additional_info" rows="4"></textarea><br>
+
+            <input type="submit" value="Submit Request">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2024 Organ Donation Foundation</p>
+    </footer>
+</body>
+</html>
