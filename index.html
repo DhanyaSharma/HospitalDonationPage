@@ -5,53 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="/static/index.css">
-    <script src="/static/first.js"></script>
-
+    <script src="first.js"></script>
 </head>
 <body>
 <header>
     <h1>WELCOME TO HOSPITAL DONATION PAGE</h1>
     <div id="navbar" class="button-group">
         <h3>
-            <a class="nav-link active" aria-current="page" href="{{ url_for('index') }}">Home</a>
-            <a class="nav-link active" aria-current="page" href="{{ url_for('BloodSlot') }}">Blood Donation</a>
-            <a class="nav-link active" aria-current="page" href="{{ url_for('volunteer') }}">Volunteer</a>
-            <a class="nav-link active" aria-current="page" href="{{ url_for('Login') }}">Login</a>
-            <a class="nav-link active" aria-current="page" href="{{ url_for('Signup') }}">Signup</a>
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link active" aria-current="page" href="BloodSlot.html">Blood Donation</a>
+            <a class="nav-link active" aria-current="page" href="volunteer.html">Volunteer</a>
+            <a class="nav-link active" aria-current="page" href="Login.html">Login</a>
+            <a class="nav-link active" aria-current="page" href="Signup.html">Signup</a>
         </h3>
     </div>
 </header>    
+
 <main>
     <h2>Donation Desk</h2>
     <div class="image-container">
-        <a href="{{ url_for('donate') }}">
+        <a href="donate.html">
             <div class="image-wrapper">
-                <img src="{{ url_for('static', filename='donation.png') }}" alt="Donation" width="300">
+                <img src="images/donation.png" alt="Donation" width="300">
                 <div class="caption">Donate an Organ</div>
             </div>
         </a>
         
-        <a href="{{ url_for('request_page') }}">
+        <a href="request.html">
             <div class="image-wrapper">
-                <img src="{{ url_for('static', filename='request.png') }}" alt="Request" width="300">
+                <img src="images/request.png" alt="Request" width="300">
                 <div class="caption">Request for Organs</div>
             </div>
         </a>
         
         <a href="history.html">
             <div class="image-wrapper">
-                <img src="{{ url_for('static', filename='record.png') }}" alt="Record" width="300">
+                <img src="images/record.png" alt="Record" width="300">
                 <div class="caption">Past Donations Made</div>
             </div>
         </a>        
     </div>
 </main>
 
+<footer>
+    <pre>GMAIL: donate23@gmail.com           CONTACT: 2827XXX9290                  ADDRESS: 12,42 Lane, Trichy</pre>
+</footer>
 
-<FOOTER>
-    <PRE>GMAIL: dONATE23@GMAIL.COM           CONTACT: 2827XXX9290                  ADDRESS: 12,42 LANE, TRICHY <PRE/>
-</FOOTER> 
-  <script src="first.js"></script>
+<script src="first.js"></script>
 </body>
 </html>
