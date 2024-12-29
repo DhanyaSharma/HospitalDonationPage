@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteering</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
-    <script src="{{ url_for('static', filename='first.js') }}"></script>
+    <link rel="stylesheet" href="index.css">
+    <script src="first.js"></script>
 </head>
 <body id="form">
     <form action="/submit_volunteer_details" method="POST">
 
         <h1>Volunteering for Hospital Events</h1>
         <div style="float:right; margin-left: 20px;">
-            <img src="{{ url_for('static', filename='dash.webp') }}"  alt="Image description" width="250">
+            <img src="images/dash.webp" alt="Image description" width="250">
         </div>
         <div style="float:left; margin-right: 20px;">
-            <img src="{{ url_for('static', filename='dash.webp') }}"  alt="Image description" width="250">
+            <img src="images/dash.webp" alt="Image description" width="250">
         </div>
         <h2>Upcoming Events</h2>
         <ul>
@@ -42,12 +42,11 @@
         <br>
         <button type="submit">Register</button>
     </form>
-</div>
+    </div>
 
-        
-        <div style="text-align: center;">
-            <p class="alter"><a href="{{ url_for('index') }}">Home</a></p>
-        </div>
+    <div style="text-align: center;">
+        <p class="alter"><a href="index.html">Home</a></p>
+    </div>
     </form>
 </body>
 </html>
