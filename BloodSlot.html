@@ -3,17 +3,17 @@
 <head>
     <title>Blood Donation Slot Booking</title>
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="/static/index.css">
-    <script src="/static/first.js"></script>
-    
+    <script src="first.js"></script>
 </head>
 <body id="form">
     <h1>Welcome to the Blood Donation Slot Booking Page!</h1>
     <div style="float:right;">
-        <img src="{{ url_for('static', filename='blooddd.webp') }}"  alt="Image description" width="250">
-    </div >
-    <form action="/submit" method="POST">
-        <div> 
+        <img src="images/blooddd.webp" alt="Image description" width="250">
+    </div>
+    
+    <!-- Form for Blood Donation Slot -->
+    <form name="blood-donation-form" method="POST" data-netlify="true">
+        <div>
             <label for="Name">Name</label>
             <input type="text" class="input" required id="Name" name="Name">
         </div>
@@ -35,7 +35,7 @@
             <input type="text" class="input" required id="Age" name="Age">
         </div>
         <div>
-            <label for="Blood Group">Blood Group</label>
+            <label for="Blood_Group">Blood Group</label>
             <input type="text" class="input" required id="Blood_Group" name="Blood_Group">
         </div>
         <div>
@@ -46,7 +46,6 @@
                 <option value="12 PM">12 PM</option>
                 <option value="3 PM">3 PM</option>
             </select>
-            
         </div>
         <div>
             <label for="Select Date">Select Date</label>
@@ -56,57 +55,33 @@
         <div>
             <button type="submit">SUBMIT</button>
         </div>
-        </form>
+    </form>
+
+    <p class="alter"><a href="index.html">Home</a></p>
+
+    <section>
+        <h2>"Be a Lifesaver: Donate Blood Today and Make a Lasting Impact!"</h2>
+        <h3>
+            Blood donation is a selfless act that directly impacts lives by providing essential support to patients in need. Through the simple act of donating blood, individuals contribute to saving lives during emergencies, surgeries, and medical treatments.
+        </h3>
     </section>
-      <p class="alter" ><a  href="{{ url_for('index') }}">Home</a></p>
-    </div> 
-    </section>
-    <p><h2>"Be a Lifesaver: Donate Blood Today and Make a Lasting Impact!"</h2>
-    <h3>
-        Blood donation is a selfless act that directly impacts lives by providing essential support to patients in need. Through the simple act of donating blood, individuals contribute to saving lives during emergencies, surgeries, and medical treatments.
-    </h3>
-</p>
+
+    <div>
+        <table>
+            <tr>
+                <th>Blood Type</th>
+                <th>Percentage</th>
+            </tr>
+            <tr><td>AB-</td><td>0.5-1%</td></tr>
+            <tr><td>B-</td><td>1-2%</td></tr>
+            <tr><td>A-</td><td>2-3%</td></tr>
+            <tr><td>AB+</td><td>2-4%</td></tr>
+            <tr><td>O-</td><td>6-7%</td></tr>
+            <tr><td>B+</td><td>9-11%</td></tr>
+            <tr><td>A+</td><td>27-30%</td></tr>
+            <tr><td>O+</td><td>37-39%</td></tr>
+        </table>
+    </div>
+
 </body>
-<div>
-<table>
-    <tr>
-        <th>Blood Type</th>
-        <th>Percentage</th>
-    </tr>
-    <tr>
-        <td>AB-</td>
-        <td>0.5-1%</td>
-    </tr>
-    <tr>
-        <td>B-</td>
-        <td>1-2%</td>
-    </tr>
-    <tr>
-        <td>A-</td>
-        <td>2-3%</td>
-    </tr>
-    <tr>
-        <td>AB+</td>
-        <td>2-4%</td>
-    </tr>
-    <tr>
-        <td>O-</td>
-        <td>6-7%</td>
-
-
-    </tr>
-    <tr>
-        <td>B+</td>
-        <td>9-11%</td>
-    </tr>
-    <tr>
-        <td>A+</td>
-        <td>27-30%</td>
-    </tr>
-    <tr>
-        <td>O+</td>
-        <td>37-39%</td>
-    </tr>
-</table>
-</div>
-</main>
+</html>
