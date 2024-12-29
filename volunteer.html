@@ -5,48 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteering</title>
     <link rel="stylesheet" href="index.css">
-    <script src="first.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+
+        header h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .content-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .corner-images {
+            position: absolute;
+            top: 0;
+            width: 100%;
+        }
+
+        .corner-images img:first-child {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+        }
+
+        .corner-images img:last-child {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 150px;
+        }
+
+        .events-list {
+            margin: 50px 0;
+        }
+
+        .events-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .events-list li {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .form-container {
+            margin-top: 30px;
+        }
+
+        .form-container form {
+            text-align: center;
+        }
+
+        footer {
+            margin-top: 20px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #007BFF;
+        }
+    </style>
 </head>
 <body id="form">
-    <form action="/submit_volunteer_details" method="POST">
-
+    <header>
         <h1>Volunteering for Hospital Events</h1>
-        <div style="float:right; margin-left: 20px;">
-            <img src="dash.webp" alt="Image description" width="250">
+    </header>
+
+    <div class="content-wrapper">
+        <!-- Corner Images -->
+        <div class="corner-images">
+            <img src="dash.webp" alt="Volunteer Left">
+            <img src="dash.webp" alt="Volunteer Right">
         </div>
-        <div style="float:left; margin-right: 20px;">
-            <img src="dash.webp" alt="Image description" width="250">
+
+        <!-- Events List -->
+        <div class="events-list">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li>Medical Camp - Date: April 15, 2024</li>
+                <li>Blood Donation Drive - Date: May 20, 2024</li>
+                <li>Health Awareness Seminar - Date: June 10, 2024</li>
+                <li>Polio Drop - Date: July 1, 2024</li>
+                <li>Health Awareness Campaign - Date: August 15, 2024</li>
+            </ul>
         </div>
-        <h2>Upcoming Events</h2>
-        <ul>
-            <li>Medical Camp - Date: April 15, 2024</li>
-            <li>Blood Donation Drive - Date: May 20, 2024</li>
-            <li>Health Awareness Seminar - Date: June 10, 2024</li>
-            <li>Polio Drop - Date: July 1, 2024</li>
-            <li>Health Awareness Campaign - Date: August 15, 2024</li>
-            <!-- Add more events here -->
-        </ul>
-        <div style="text-align: center;">
+    </div>
+
+    <!-- Registration Form -->
+    <div class="form-container">
         <h3>Register for an Event:</h3>
         <form action="/submit_volunteer_details" method="post">
-        <label for="Aadhar_No">Aadhar No:</label>
-        <input type="text" id="Aadhar_No" name="Aadhar_No" required>
-        <br>
-        <label for="event">Select Event:</label>
-        <select name="event" id="event">
-            <option value="medical_camp">Medical Camp</option>
-            <option value="blood_drive">Blood Donation Drive</option>
-            <option value="awareness_seminar">Health Awareness Seminar</option>
-            <!-- Add more events here -->
-        </select>
-        <br>
-        <button type="submit">Register</button>
-    </form>
+            <label for="Aadhar_No">Aadhaar No:</label>
+            <input type="text" id="Aadhar_No" name="Aadhar_No" placeholder="Enter your Aadhaar Number" required>
+            <br><br>
+            <label for="event">Select Event:</label>
+            <select name="event" id="event" required>
+                <option value="" disabled selected>Select an event</option>
+                <option value="medical_camp">Medical Camp</option>
+                <option value="blood_drive">Blood Donation Drive</option>
+                <option value="awareness_seminar">Health Awareness Seminar</option>
+                <option value="polio_drop">Polio Drop</option>
+                <option value="awareness_campaign">Health Awareness Campaign</option>
+            </select>
+            <br><br>
+            <button type="submit">Register</button>
+        </form>
     </div>
 
-    <div style="text-align: center;">
-        <p class="alter"><a href="index.html">Home</a></p>
-    </div>
-    </form>
+    <!-- Footer -->
+    <footer>
+        <p><a href="index.html">Home</a></p>
+    </footer>
 </body>
 </html>
