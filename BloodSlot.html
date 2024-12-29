@@ -1,25 +1,31 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blood Donation Slot Booking</title>
     <link rel="stylesheet" href="index.css">
     <script src="first.js"></script>
 </head>
 <body id="form">
-    <h1>Welcome to the Blood Donation Slot Booking Page!</h1>
-    <div style="float:right;">
-        <img src="blooddd.webp" alt="Image description" width="250">
+    <header>
+        <h1>Welcome to the Blood Donation Slot Booking Page!</h1>
+    </header>
+    
+    <!-- Image -->
+    <div style="float:right; margin-bottom: 20px;">
+        <img src="blooddd.webp" alt="Blood Donation" width="250">
     </div>
     
     <!-- Form for Blood Donation Slot -->
-    <form name="blood-donation-form" method="POST" data-netlify="true">
+    <form name="blood-donation-form" method="POST" action="#" data-netlify="true">
         <div>
             <label for="Name">Name</label>
-            <input type="text" class="input" required id="Name" name="Name">
+            <input type="text" class="input" required id="Name" name="Name" placeholder="Enter your full name">
         </div>
         <div>
             <label for="Aadhar_No">Aadhaar Number</label>
-            <input type="text" class="input" required id="Aadhar_No" name="Aadhar_No">
+            <input type="text" class="input" required id="Aadhar_No" name="Aadhar_No" placeholder="Enter Aadhaar number">
         </div>
         <div>
             <label for="gender-select">Gender</label>
@@ -32,11 +38,11 @@
         </div>
         <div>
             <label for="Age">Age</label>
-            <input type="text" class="input" required id="Age" name="Age">
+            <input type="number" class="input" required id="Age" name="Age" placeholder="Enter your age" min="18" max="65">
         </div>
         <div>
             <label for="Blood_Group">Blood Group</label>
-            <input type="text" class="input" required id="Blood_Group" name="Blood_Group">
+            <input type="text" class="input" required id="Blood_Group" name="Blood_Group" placeholder="Enter blood group (e.g., O+)">
         </div>
         <div>
             <label for="Selected_Slot">Selected Slot</label>
@@ -48,17 +54,19 @@
             </select>
         </div>
         <div>
-            <label for="Select Date">Select Date</label>
+            <label for="date-select">Select Date</label>
             <input type="date" id="date-select" name="Date" required>
         </div>
         
-        <div>
+        <div style="margin-top: 20px;">
             <button type="submit">SUBMIT</button>
         </div>
     </form>
 
+    <!-- Navigation -->
     <p class="alter"><a href="index.html">Home</a></p>
 
+    <!-- Section -->
     <section>
         <h2>"Be a Lifesaver: Donate Blood Today and Make a Lasting Impact!"</h2>
         <h3>
@@ -66,20 +74,25 @@
         </h3>
     </section>
 
-    <div>
-        <table>
-            <tr>
-                <th>Blood Type</th>
-                <th>Percentage</th>
-            </tr>
-            <tr><td>AB-</td><td>0.5-1%</td></tr>
-            <tr><td>B-</td><td>1-2%</td></tr>
-            <tr><td>A-</td><td>2-3%</td></tr>
-            <tr><td>AB+</td><td>2-4%</td></tr>
-            <tr><td>O-</td><td>6-7%</td></tr>
-            <tr><td>B+</td><td>9-11%</td></tr>
-            <tr><td>A+</td><td>27-30%</td></tr>
-            <tr><td>O+</td><td>37-39%</td></tr>
+    <!-- Blood Type Statistics -->
+    <div style="margin-top: 30px;">
+        <table border="1" cellpadding="10" cellspacing="0" style="width: 60%; margin: 0 auto;">
+            <thead>
+                <tr>
+                    <th>Blood Type</th>
+                    <th>Percentage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>AB-</td><td>0.5-1%</td></tr>
+                <tr><td>B-</td><td>1-2%</td></tr>
+                <tr><td>A-</td><td>2-3%</td></tr>
+                <tr><td>AB+</td><td>2-4%</td></tr>
+                <tr><td>O-</td><td>6-7%</td></tr>
+                <tr><td>B+</td><td>9-11%</td></tr>
+                <tr><td>A+</td><td>27-30%</td></tr>
+                <tr><td>O+</td><td>37-39%</td></tr>
+            </tbody>
         </table>
     </div>
 
