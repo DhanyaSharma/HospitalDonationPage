@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/index.css">
+    <script src="/static/first.js"></script>
+    <div>
+    <title>Registration Form</title>
+    <style>
+        /* Center-align the form */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; /* Reset default margin */
+            font-family: Arial, sans-serif; /* Set default font */
+            background-color: #f0f0f0; /* Set background color */
+        }
+
+        form {
+            width: 300px;
+            background-color: #fff; /* Set form background color */
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+        }
+
+        /* Style the input fields and labels */
+        label {
+            display: block; /* Make labels block-level for proper spacing */
+            margin-bottom: 5px; /* Add space below labels */
+            font-weight: bold; /* Make labels bold */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        select {
+            width: 100%; /* Make input fields fill the container */
+            padding: 8px; /* Add padding to input fields */
+            margin-bottom: 10px; /* Add space between input fields */
+            border: 1px solid #ccc; /* Add border to input fields */
+            border-radius: 3px; /* Add border radius to input fields */
+            box-sizing: border-box; /* Include padding and border in input field width */
+        }
+
+        /* Style the submit button */
+        button[type="submit"] {
+            width: 100%; /* Make button fill the container */
+            padding: 10px; /* Add padding to button */
+            background-color: #007bff; /* Set button background color */
+            color: #fff; /* Set button text color */
+            border: none; /* Remove button border */
+            border-radius: 3px; /* Add border radius to button */
+            cursor: pointer; /* Add pointer cursor to button */
+            transition: background-color 0.3s; /* Add transition for hover effect */
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3; /* Change button background color on hover */
+        }
+
+        /* Style the "Not a Member?" text */
+        .alter {
+            text-align: center; /* Align text to center */
+            margin-top: 10px; /* Add space above text */
+        }
+    </style>
+</head>
+<body>
+    <form action="/submit-form" method="post">
+
+        <h3 style="text-align: center;">REGISTRATION</h3>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="Name" required>
+
+        <label for="Aadhar_No">Aadhar_No</label>
+        <input type="text" id="Aadhar_No" name="Aadhar_No" required>
+
+        <label for="Date_of_Birth">Date of Birth</label>
+        <input type="date" id="Date_of_Birth" name="Date_of_Birth" required>
+
+        <label for="Email">Email Address</label>
+        <input type="email" id="Email" name="Email" required>
+
+        <label for="Password">Password</label>
+        <input type="password" id="Password" name="Password" required>
+
+        <label for="Phone_Number">Phone Number</label>
+        <input type="text" id="Phone_Number" name="Phone_Number" required>
+
+        <label for="checkbox" class="check">
+            <input type="checkbox" id="checkbox" required>
+            <span class="checkmark"></span>
+            Agreed to terms and conditions
+        </label>
+        
+        <input type="submit" value="Submit">
+
+        <p class="alter"> <a href="{{ url_for('index') }}">HOME</a></p>
+    </form>
+</body>
+</div>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Request Form</title>
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .form-navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-navigation button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        .form-navigation button:hover {
+            background: #0056b3;
+        }
+
+        .form-navigation .previous {
+            background: #ccc;
+        }
+
+        .form-navigation .previous:hover {
+            background: #999;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Organ Request Form</h1>
+    </header>
+    <div class="form-container">
+        <form id="requestForm">
+            <!-- Section 1 -->
+            <div class="form-section active">
+                <h2>Patient Details</h2>
+                <label for="patient_name">Patient's Name*</label>
+                <input type="text" id="patient_name" name="patient_name" required>
+
+                <label for="Aadhar_No">Aadhar No*</label>
+                <input type="text" id="Aadhar_No" name="Aadhar_No" required>
+
+                <label for="patient_age">Patient's Age*</label>
+                <input type="number" id="patient_age" name="patient_age" required>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+                <h2>Organ Details</h2>
+                <label for="Relationship">Patient's Relationship*</label>
+                <input type="text" id="Relationship" name="Relationship" required>
+
+                <label for="required_organs">Required Organs*</label>
+                <input type="text" id="required_organs" name="required_organs" required>
+
+                <label for="urgency_level">Urgency Level*</label>
+                <select id="urgency_level" name="urgency_level" required>
+                    <option value="" disabled selected>---Select---</option>
+                    <option value="Within 3 weeks">Within 3 weeks</option>
+                    <option value="3 months">3 months</option>
+                    <option value="6 months">6 months</option>
+                </select>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <label for="contact_name">Contact Name*</label>
+                <input type="text" id="contact_name" name="contact_name" required>
+
+                <label for="contact_number">Contact Number*</label>
+                <input type="tel" id="contact_number" name="contact_number" required>
+
+                <label for="additional_info">Additional Information</label>
+                <textarea id="additional_info" name="additional_info" rows="4"></textarea>
+            </div>
+
+            <!-- Navigation -->
+            <div class="form-navigation">
+                <button type="button" class="previous" disabled>Previous</button>
+                <button type="button" class="next">Next</button>
+                <button type="submit" class="submit" style="display:none;">Submit Request</button>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <p>&copy; 2024 Organ Donation Foundation</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.form-section');
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.previous');
+        const submitBtn = document.querySelector('.submit');
+        let currentSectionIndex = 0;
+
+        function updateForm() {
+            sections.forEach((section, index) => {
+                section.classList.toggle('active', index === currentSectionIndex);
+            });
+
+            prevBtn.disabled = currentSectionIndex === 0;
+            nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
+            submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                updateForm();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                updateForm();
+            }
+        });
+
+        updateForm();
+    </script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Past Donations</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            color: #007bff;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input {
+            width: calc(100% - 40px);
+            max-width: 400px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .donation-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .donation-item {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            padding: 15px;
+            transition: box-shadow 0.3s;
+        }
+
+        .donation-item:hover {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .donation-item h3 {
+            margin: 0 0 10px;
+            color: #007bff;
+        }
+
+        .donation-item p {
+            margin: 5px 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Past Donations</h1>
+        </header>
+
+        <div class="search-container">
+            <input type="text" id="searchBar" placeholder="Search donations...">
+        </div>
+
+        <ul class="donation-list" id="donationList">
+            <!-- Donation items will be populated dynamically -->
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Organ Donation Foundation</p>
+    </footer>
+
+    <script>
+        const donations = [
+            {
+                organ: "Kidney",
+                donationDate: "2024-10-05",
+                hospital: "City Hospital",
+                status: "Successfully Transplanted",
+            },
+            {
+                organ: "Liver",
+                donationDate: "2024-09-15",
+                hospital: "Green Valley Medical Center",
+                status: "Successfully Transplanted",
+            },
+            {
+                organ: "Corneas (Eyes)",
+                donationDate: "2024-08-22",
+                hospital: "Vision Care Hospital",
+                status: "Successfully Transplanted",
+            },
+            {
+                organ: "Heart",
+                donationDate: "2024-07-10",
+                hospital: "Global Heart Institute",
+                status: "Awaiting Transplant",
+            },
+            {
+                organ: "Lungs",
+                donationDate: "2024-06-18",
+                hospital: "HealthTrust Respiratory Center",
+                status: "Successfully Transplanted",
+            },
+        ];
+
+        const donationList = document.getElementById("donationList");
+        const searchBar = document.getElementById("searchBar");
+
+        // Function to render the list of donations
+        function renderDonations(filteredDonations) {
+            donationList.innerHTML = "";
+            if (filteredDonations.length === 0) {
+                donationList.innerHTML = "<p>No donations found.</p>";
+                return;
+            }
+
+            filteredDonations.forEach((donation) => {
+                const listItem = document.createElement("li");
+                listItem.classList.add("donation-item");
+
+                listItem.innerHTML = `
+                    <h3>${donation.organ}</h3>
+                    <p><strong>Date:</strong> ${donation.donationDate}</p>
+                    <p><strong>Hospital:</strong> ${donation.hospital}</p>
+                    <p><strong>Status:</strong> ${donation.status}</p>
+                `;
+
+                donationList.appendChild(listItem);
+            });
+        }
+
+        // Initial rendering
+        renderDonations(donations);
+
+        // Search functionality
+        searchBar.addEventListener("input", (event) => {
+            const searchText = event.target.value.toLowerCase();
+            const filteredDonations = donations.filter((donation) =>
+                donation.organ.toLowerCase().includes(searchText) ||
+                donation.hospital.toLowerCase().includes(searchText) ||
+                donation.status.toLowerCase().includes(searchText)
+            );
+            renderDonations(filteredDonations);
+        });
+    </script>
+</body>
+</html>

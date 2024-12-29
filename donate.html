@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organ Donation Registration</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="/static/index.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .form-navigation {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .form-navigation button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #007bff;
+            color: #fff;
+            transition: background 0.3s;
+        }
+
+        .form-navigation button:hover {
+            background: #0056b3;
+        }
+
+        .form-navigation .previous {
+            background: #ccc;
+        }
+
+        .form-navigation .previous:hover {
+            background: #999;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select, textarea {
+            width: calc(100% - 20px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Organ Donation Registration</h1>
+    </header>
+    <div class="form-container">
+        <form id="donationForm">
+            <!-- Section 1 -->
+            <div class="form-section active">
+                <h2>Personal Information</h2>
+                <label for="first_name">First Name*</label>
+                <input type="text" id="first_name" name="first_name" required>
+
+                <label for="middle_name">Middle Name</label>
+                <input type="text" id="middle_name" name="middle_name">
+
+                <label for="last_name">Last Name*</label>
+                <input type="text" id="last_name" name="last_name" required>
+
+                <label for="email">Email*</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="form-section">
+                <h2>Address Details</h2>
+                <label for="current_address">Current Address*</label>
+                <input type="text" id="current_address" name="current_address" required>
+
+                <label for="city">City*</label>
+                <input type="text" id="city" name="city" required>
+
+                <label for="state">State*</label>
+                <input type="text" id="state" name="state" required>
+
+                <label for="pin_code">PIN Code*</label>
+                <input type="text" id="pin_code" name="pin_code" required>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="form-section">
+                <h2>Donation Preferences</h2>
+                <label for="organs_to_donate">Organs to Donate*</label>
+                <div>
+                    <input type="checkbox" name="organs_to_donate[]" value="all_organs"> All Organs<br>
+                    <input type="checkbox" name="organs_to_donate[]" value="corneas"> Corneas<br>
+                    <input type="checkbox" name="organs_to_donate[]" value="heart"> Heart<br>
+                    <input type="checkbox" name="organs_to_donate[]" value="liver"> Liver<br>
+                </div>
+
+                <label for="identity_card">Choose Identity Card*</label>
+                <select id="identity_card" name="identity_card" required>
+                    <option value="">---Select---</option>
+                    <option value="aadhar">Aadhar</option>
+                    <option value="voter_id">Voter ID</option>
+                </select>
+            </div>
+
+            <!-- Navigation -->
+            <div class="form-navigation">
+                <button type="button" class="previous" disabled>Previous</button>
+                <button type="button" class="next">Next</button>
+                <button type="submit" class="submit" style="display:none;">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const sections = document.querySelectorAll('.form-section');
+        const nextBtn = document.querySelector('.next');
+        const prevBtn = document.querySelector('.previous');
+        const submitBtn = document.querySelector('.submit');
+        let currentSectionIndex = 0;
+
+        function updateForm() {
+            sections.forEach((section, index) => {
+                section.classList.toggle('active', index === currentSectionIndex);
+            });
+
+            prevBtn.disabled = currentSectionIndex === 0;
+            nextBtn.style.display = currentSectionIndex === sections.length - 1 ? 'none' : 'inline-block';
+            submitBtn.style.display = currentSectionIndex === sections.length - 1 ? 'inline-block' : 'none';
+        }
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSectionIndex < sections.length - 1) {
+                currentSectionIndex++;
+                updateForm();
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSectionIndex > 0) {
+                currentSectionIndex--;
+                updateForm();
+            }
+        });
+
+        updateForm();
+    </script>
+</body>
+</html>

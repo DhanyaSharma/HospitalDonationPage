@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="/static/index.css">
+    <script src="/static/first.js"></script>
+   
+</head>
+<body id="form">
+   <div style="text-align: center;">
+       <h2>Log In</h2>
+       
+   </div>
+      <div class="box" style="margin: 0 auto; width: fit-content; padding: 70px; border: 3px solid #0c0101; border-radius: 5px;">
+          <div class="inputfield">
+            <body>
+                <h1>Login</h1>
+                {% if error %}
+                <p style="color: red;">{{ error }}</p>
+                {% endif %}
+                <form action="/login" method="POST">
+                    <div class="inputfield">
+                        <label for="aadhar">Aadhar Number</label>
+                        <input type="text" id="aadhar" class="input" placeholder="Aadhar Number" name="Aadhar_No" required>
+                    </div>
+                    <div class="inputfield">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" class="input" placeholder="Password" name="Password" required>
+                    </div>
+                    
+                    <input type="submit" value="Login">
+                </form>
+            </body>
+            </html>
+          <div>
+              <p class="alter">Not a Member? <a class="login" href="{{ url_for('Signup') }}">Register now!</a></p>
+          </div> 
+      </div>
+  </body>
+  
+</body>
+
+
+</html>
